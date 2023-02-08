@@ -45,11 +45,9 @@ const apigateway_Server = async()=>{
         
     })
     app.use('/bookingservice' , createProxyMiddleware({ target: 'http://localhost:3002/', changeOrigin: true }))
-    app.get('/home' , (req,res)=>{
-        return res.status(201).json({
-            message : "Status Ok"
-        })
-    });
+    app.get('/home', (req, res) => {
+        return res.json({message: 'OK'});
+    })
     app.listen(PORT , ()=>{
         console.log("Server started at " , PORT);
     })
